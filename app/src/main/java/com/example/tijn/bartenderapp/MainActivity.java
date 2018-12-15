@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse{
         final Button button = findViewById(R.id.saveIPButton);
         //ListView population
         final ListView listview = (ListView) findViewById(R.id.optionsList);
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         String[] values = new String[] { "Drinks", "Pumps", "Recipes" };
 
