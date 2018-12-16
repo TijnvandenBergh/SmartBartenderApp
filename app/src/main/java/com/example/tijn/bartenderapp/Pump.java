@@ -10,10 +10,10 @@ public class Pump {
     @JsonProperty("value")
     public String value;
 
-    public Pump(String name, int pin, String value) {
+    public Pump(String name, String value, int pin) {
         this.name = name;
-        this.pin = pin;
         this.value = value;
+        this.pin = pin;
     }
 
     public String getName() {

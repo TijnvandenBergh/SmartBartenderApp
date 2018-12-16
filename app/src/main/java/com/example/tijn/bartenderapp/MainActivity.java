@@ -2,11 +2,9 @@ package com.example.tijn.bartenderapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -16,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -36,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse{
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        String[] values = new String[] { "Drinks", "Pumps", "Recipes" };
+        String[] values = new String[] { "Pumps", "Drinks", "Recipes" };
 
         final ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < values.length; ++i) {
@@ -51,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements  AsyncResponse{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0 ) {
+                    Intent myPumpIntent = new Intent(view.getContext(), PumpActivity.class);
+                    startActivity(myPumpIntent);
+                }
+                if (position == 1) {
                     Intent myDrinkIntent = new Intent(view.getContext(), DrinkActivity.class);
                     startActivity(myDrinkIntent);
                 }
