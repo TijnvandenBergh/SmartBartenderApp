@@ -1,5 +1,7 @@
 package com.example.tijn.bartenderapp;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Ingredient {
     public String name;
     public int value;
